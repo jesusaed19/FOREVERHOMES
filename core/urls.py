@@ -2,9 +2,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from django.conf import settings
+from .views import HomeViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', HomeViews.as_view(), name='home'),
 ]
 
 if settings.DEBUG:
